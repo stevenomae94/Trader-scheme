@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Trader Dashboard</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0b1020;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.box{
+background:#1e293b;
+padding:30px;
+width:320px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+h2{
+text-align:center;
+color:#00ff99;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+background:#111827;
+color:white;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#00cc66;
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#00aa55;
+}
+
+p{
+text-align:center;
+margin-top:15px;
+}
+
+a{
+color:#00ff99;
+text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>Trader Login</h2>
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>
+Don't have an account?
+<a href="signup.html">Sign Up</a>
+</p>
+
+</div>
+
+<script>
+function login(){
+window.location.href="index.html";
+}
+</script>
+
+</body>
+  </html>
