@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deposit Funds</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#08111f;
+    color:white;
+}
+
+header{
+    background:#0d47a1;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    color:#00ff99;
+}
+
+.container{
+    max-width:400px;
+    margin:40px auto;
+    background:#1b2438;
+    padding:25px;
+    border-radius:12px;
+}
+
+h2{
+    text-align:center;
+    color:#00ff99;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    background:#00cc66;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00aa55;
+}
+
+.back{
+    background:#0d47a1;
+}
+
+.message{
+    text-align:center;
+    color:#00ff99;
+    margin-top:20px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>Deposit Funds</header>
+
+<div class="container">
+
+<h2>Make a Deposit</h2>
+
+<label>Deposit Amount ($)</label>
+<input type="number" id="amount" placeholder="Enter amount">
+
+<label>Payment Method</label>
+<select id="method">
+<option>Bitcoin (BTC)</option>
+<option>Ethereum (ETH)</option>
+<option>USDT</option>
+<option>Bank Transfer</option>
+<option>Credit/Debit Card</option>
+</select>
+
+<button onclick="deposit()">Submit Deposit</button>
+
+<button class="back" onclick="window.location.href='dashboard.html'">
+Back to Dashboard
+</button>
+
+<p class="message" id="msg">
+✅ Deposit request submitted successfully.
+</p>
+
+</div>
+
+<script>
+function deposit(){
+    let amount=document.getElementById("amount").value;
+
+    if(amount==""){
+        alert("Please enter a deposit amount.");
+        return;
+    }
+
+    document.getElementById("msg").style.display="block";
+}
+</script>
+
+</body>
+</html>
