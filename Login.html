@@ -88,13 +88,38 @@ Don't have an account?
 </p>
 
 </div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-<script>
-function login() {
-    window.location.href = "dashboard.html";
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyDMnw0LEf4sqbYmg0Y_ko_kqjITwFaBa_8",
+  authDomain: "trader-scheme.firebaseapp.com",
+  projectId: "trader-scheme",
+  storageBucket: "trader-scheme.firebasestorage.app",
+  messagingSenderId: "398245449457",
+  appId: "1:398245449457:web:6cc2303448311cea43e350",
+  measurementId: "G-P58V7YH6X5"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.login = function () {
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      alert("Login successful!");
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+};
 </script>
 
 </body>
-  </html>
+</html>
 
